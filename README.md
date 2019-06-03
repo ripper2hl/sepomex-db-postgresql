@@ -8,7 +8,7 @@ que ofrece *SEPOMEX* de forma normailzada.
 
 Para ejecutar la base de datos es necesario correr el comando:
 
-`docker run -p 5432:5432 -d sepomex-db-postgresql:latest`
+`docker run -p 5432:5432 -d jesusperales/sepomex-db-postgresql:latest`
 
 Las credenciales:
 
