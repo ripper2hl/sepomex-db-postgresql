@@ -44,7 +44,7 @@ base de datos : sepomex
 
 * Descargamos el **archivo de texto** de la pagina de [sepomex](https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx).
 
-* Abrimos el archivo de texto y lo guardamos como UTF-8, esto es importante para mantener los acentos.
+* Abrimos el archivo de texto(con gedit) y lo guardamos como UTF-8, esto es importante para mantener los acentos.
 
 * Cargamos el archivo usando el metodo cargaMasiva que se encuentra en swagger.
 
