@@ -37,6 +37,14 @@ base de datos : sepomex
 
 * Es necesario correr el proyecto [sepomex](https://github.com/ripper2hl/sepomex).
 
+* Cambiar en el archivo `application-local.properties` la propiedad
+
+  ```
+  spring.jpa.properties.hibernate.hbm2ddl.auto=create
+  ```
+
+* Ejecutar los siguientes comandos
+
   ```bash
   export spring_profiles_active=local
   mvn spring-boot:run
@@ -46,7 +54,7 @@ base de datos : sepomex
 
 * Abrimos el archivo de texto(con gedit) y lo guardamos como UTF-8, esto es importante para mantener los acentos.
 
-* Cargamos el archivo usando el metodo cargaMasiva que se encuentra en swagger.
+* Cargamos el archivo usando el metodo cargaMasiva que se encuentra en swagger(tiempo de carga 12 minutos).
 
 * Ejecutamos el siguiente comando para obtener el backup.
 
