@@ -1,0 +1,32 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag jesusperales/sepomex-db-postgresql:$(date +%s)
+
+    - name: Log in to Docker Hub
+      run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+    - name: Tag the Docker image as latest
+      run: docker tag jesusperales/sepomex-db-postgresql:$(date +%s) jesusperales/sepomex-db-postgresql:latest
+
+    - name: Push the Docker image with latest tag
+      run: docker push jesusperales/sepomex-db-postgresql:latest
+
+    - name: Tag the Docker image with date
+      run: docker tag jesusperales/sepomex-db-postgresql:$(date +%s) jesusperales/sepomex-db-postgresql:$(date +%Y-%m-%d)
+
+    - name: Push the Docker image with date tag
+      run: docker push jesusperales/sepomex-db-postgresql:$(date +%Y-%m-%d)
