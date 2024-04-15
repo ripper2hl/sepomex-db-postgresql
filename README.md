@@ -70,3 +70,7 @@ base de datos : sepomex
   docker build . -t sepomex-db-postgresql
   docker run -p 5432:5432 -e POSTGRES_PASSWORD=sepomex -e POSTGRES_USER=sepomex sepomex-db-postgresql
   ```
+* Construimos la imagen de docker raspberry pi.
+  ```bash
+  docker build . -t jesusperales/sepomex-db-postgresql:pi --platform linux/arm/v7
+  ```
